@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func modificarValor(p *int) {
+    if p != nil {
+        *p = 42
+    }
+}
+
+func main() {
+    var minhaVariavel int
+
+    ponteiroParaVariavel := &minhaVariavel
+
+    modificarValor(ponteiroParaVariavel)
+
+    fmt.Println("Valor atualizado da variável:", minhaVariavel)
+}
