@@ -1,0 +1,36 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func isPrimo(numero int) bool {
+	if numero <= 1 {
+		return false
+	}
+
+	limite := int(math.Sqrt(float64(numero)))
+
+	for i := 2; i <= limite; i++ {
+		if numero%i == 0 {
+			return false
+		}
+	}
+
+	return true
+}
+
+func preencherComPrimos(slice *[]int, tamanho int) {
+	if tamanho <= 0 {
+		return
+	}
+
+	i := 2 
+	for len(*slice) < tamanho {
+		if isPrimo(i) {
+			*slice = append(*slice, i)
+		}
+		i++
+	}
+}
