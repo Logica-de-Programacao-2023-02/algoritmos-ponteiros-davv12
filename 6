@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+type Livro struct {
+	Titulo string
+	Autor  string
+}
+
+func atualizarTituloSeAnonimo(livro *Livro) {
+	if livro.Autor == "Anônimo" {
+		livro.Titulo = "Desconhecido"
+	}
+}
+
+func main() {
+	livroExemplo := Livro{
+		Titulo: "O Livro Misterioso",
+		Autor:  "Anônimo",
+	}
+
+	atualizarTituloSeAnonimo(&livroExemplo)
+
+	fmt.Printf("Novo Título: %s\n", livroExemplo.Titulo)
+	fmt.Printf("Autor: %s\n", livroExemplo.Autor)
+}
+
