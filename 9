@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+type Livro struct {
+	Titulo string
+	Autor  string
+	Preco  float64
+}
+
+func aplicarDesconto(livro *Livro) {
+	if livro != nil {
+		desconto := 0.10 * livro.Preco
+
+		livro.Preco -= desconto
+	}
+}
+
+
