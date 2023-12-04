@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func atualizarMediaComPi(p *float64) {
+	valorAtual := *p
+
+	media := (valorAtual + math.Pi) / 2.0
+
+	*p = media
+}
+
+func main() {
+	numero := 3.0
+
+	atualizarMediaComPi(&numero)
+
+	fmt.Printf("O novo valor da variável é: %f\n", numero)
+}
+v
