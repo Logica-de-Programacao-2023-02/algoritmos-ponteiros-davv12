@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func inverterString(p *string) {
+	runes := []rune(*p)
+
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+
+	*p = string(runes)
+}
+
+func main() {
+	texto := "Gopher"
+
+	inverterString(&texto)
+
+	fmt.Printf("A string após a inversão é: %s\n", texto)
+}
+
