@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+type Conta struct {
+	Saldo   float64
+	Titular string
+}
+
+func depositarValor(conta *Conta, valor float64) {
+	conta.Saldo += valor
+}
+
+func main() {
+	contaExemplo := Conta{
+		Saldo:   1000.0,
+		Titular: "João",
+	}
+
+	depositarValor(&contaExemplo, 500.0)
+
+	fmt.Printf("Saldo atualizado: R$ %.2f\n", contaExemplo.Saldo)
+	fmt.Printf("Titular: %s\n", contaExemplo.Titular)
+}
